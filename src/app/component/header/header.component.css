@@ -1,0 +1,38 @@
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
+
+   body {
+            background-color: #f8f9fa; /* Light grey background */
+        }
+        .navbar {
+            background-color: #0a010a !important; /* Flipkart's blue color */
+        }
+        .navbar-brand img {
+            max-height: 40px;
+            margin-right: 10px;
+        }
+        .navbar-dark .navbar-toggler-icon {
+            background-color: #fff; /* White color for the toggler icon */
+        }
+        .navbar-dark .navbar-toggler:focus, .navbar-dark .navbar-toggler:active {
+            outline: none;
+        }
+        .form-inline input {
+            width: 300px; /* Adjust the width as needed */
+        }
+        .dropdown-menu {
+            width: 300px; /* Adjust the width as needed */
+        }
+        .dropdown-menu img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+        .dropdown-menu h4 {
+            margin-bottom: 0;
+        }
