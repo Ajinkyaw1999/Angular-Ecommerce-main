@@ -61,4 +61,7 @@ export class ApiService {
   recievefinalamount() {
     return this.amount;
   }
+  searchProduct(keyword: string) {
+    return this.http.get<product[]>("https://dummyjson.com/products/search?q=" + keyword);
+  }
 }

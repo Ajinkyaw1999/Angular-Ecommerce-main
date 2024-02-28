@@ -28,4 +28,16 @@ export class ProductViewComponent implements OnInit {
   removeitem(item: product) {
     this.api.removecartitem(item);
   }
+
+   searchProducts(keyword: string) {
+    if (keyword.trim() !== '') {
+      this.api.searchProduct(keyword).subscribe((res) => {
+        this.data = res;
+      });
+    } else {
+      // If the search bar is empty, display all products
+      this.displayproducts();
+    }
+  }
 }
+

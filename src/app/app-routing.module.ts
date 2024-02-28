@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+// import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductViewComponent } from './component/product-view/product-view.component';
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
@@ -17,7 +18,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes),
+    ],
+  exports: [RouterModule],
+ 
 })
 export class AppRoutingModule { }

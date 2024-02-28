@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,8 @@ import { CardPaymentComponent } from './component/card-payment/card-payment.comp
 import { CardOrderComponent } from './component/card-order/card-order.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { BanerComponent } from './component/baner/baner.component';
+import { SearchbarComponent } from './component/searchbar/searchbar.component';
+
 
 @NgModule({
   declarations: [
@@ -26,12 +29,14 @@ import { BanerComponent } from './component/baner/baner.component';
     CardOrderComponent,
     SidebarComponent,
     BanerComponent,
-  ],
+    SearchbarComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,10 @@
 <!--product display part-->
-<div class="container-fluid" style="background-color: #ecf0f1">
+
+<div class="container-fluid" style="background-color: #ecf0f1;">
+  <div class="d-flex justify-content-center mt-3">
+    <app-searchbar (search)="searchProducts($event)"></app-searchbar>
+  </div>
+  <app-baner></app-baner>
   <div class="row">
     <div class="col-md-2 mt-3" *ngFor="let item of data?.products">
       <div class="card mt-2">

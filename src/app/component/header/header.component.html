@@ -1,117 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Add Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-#2C3E50 bg-#2C3E50">
-      <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand" href="#">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0TULe0jUgbYOLtbgMm0dnBLq3_hZfoHQzg&usqp=CAU"
-            width="60"
-            height="40"
-            class="d-inline-block align-top"
-            alt="Your Logo"
-          />
-        </a>
+<head>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body style="padding-top:65px;">
 
-        <!-- Toggler button for small screens -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0TULe0jUgbYOLtbgMm0dnBLq3_hZfoHQzg&usqp=CAU"
+          width="60"
+          height="40"
+          class="d-inline-block align-top"
+          alt="Your Logo"
+        />
+      </a>
+
+      <!-- Toggler button for small screens -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Product Search -->
+      <!-- <app-searchbar></app-searchbar> -->
+
+      <!-- Cart Dropdown -->
+      <div class="dropdown ml-6">
+        <i
+          routerLink="cart-page"
+          class="fas fa-shopping-cart text-white"
+          style="font-size: 18px; cursor: pointer"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          &nbsp;{{ cartitems }}
+        </i>
 
-        <!-- Product Search -->
-        <form class="form-inline my-2 my-lg-0 ml-auto">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search Products"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
-
-        <!-- Cart Dropdown -->
-        <div class="dropdown ml-6">
-          <i
-            routerLink="cart-page"
-            class="fas fa-shopping-cart text-white"
-            style="font-size: 18px; cursor: pointer"
-          >
-            &nbsp;{{ cartitems }}
-          </i>
-
-          <ul class="dropdown-menu" *ngIf="this.showproduct.length >= 1">
-            <div class="CartContainer">
-              <div class="row">
-                <div class="col-6">
-                  <strong class="text-light">Your Cart Items</strong>
-                </div>
-                <div class="col-3 text-right text-primary">
-                  <strong class="text-light">Price</strong>
-                </div>
-                <!-- ngFor looping-->
-                <div class="row mt-3" *ngFor="let item of showproduct">
-                  <div class="col-7">
-                    <img class="img-fluid" src="{{ item.thumbnail }}" />
-                  </div>
-                  <div class="col-5">
-                    <h4 class="text-light">${{ item.price }}</h4>
-                    <i
-                      style="cursor: pointer"
-                      (click)="deleteitem(item)"
-                      class="fa fa-trash text-danger"
-                      aria-hidden="true"
-                    ></i>
-                  </div>
-                </div>
-
-                <div class="text-center mt-3">
-                  <button (click)="emptycart()" *ngIf="this.showproduct.length >= 1" class="btn btn-sm btn-warning">
-                    Empty cart
-                  </button>
-                </div>
-                <!---end-->
+        <ul class="dropdown-menu" *ngIf="this.showproduct.length >= 1">
+          <div class="CartContainer">
+            <div class="row">
+              <div class="col-6">
+                <strong class="text-light">Your Cart Items</strong>
               </div>
-            </div>
-          </ul>
-        </div>
-      </div>
-    </nav>
+              <div class="col-3 text-right text-primary">
+                <strong class="text-light">Price</strong>
+              </div>
+              <!-- ngFor looping-->
+              <div class="row mt-3" *ngFor="let item of showproduct">
+                <div class="col-7">
+                  <img class="img-fluid" src="{{ item.thumbnail }}" />
+                </div>
+                <div class="col-5">
+                  <h4 class="text-light">${{ item.price }}</h4>
+                  <i
+                    style="cursor: pointer"
+                    (click)="deleteitem(item)"
+                    class="fa fa-trash text-danger"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+              </div>
 
-    <!-- Rest of your content -->
-    <div class="container-fluid bg-primary">
-      <div class="row justify-content-center text-center">
-        <div class="col-md-8 col-lg-6">
-          <div class="header">
-            <marquee class="text- #ffffff"
-              >Exciting Offers Await! Hurry, Shop Now and Grab Unbelievable
-              Deals!</marquee
-            >
+              <div class="text-center mt-3">
+                <button (click)="emptycart()" *ngIf="this.showproduct.length >= 1" class="btn btn-sm btn-warning">
+                  Empty cart
+                </button>
+              </div>
+              <!---end-->
+            </div>
           </div>
-        </div>
+        </ul>
       </div>
     </div>
+  </nav>
 
+  <!-- Rest of your content -->
+  <div class="container-fluid bg-secondary">
+    <div class="row justify-content-center text-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="header">
+          <marquee class="text-light">
+            Exciting Offers Await! Hurry, Shop Now and Grab Unbelievable Deals!
+          </marquee>
+        </div>
+      </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  </body>
+      <!-- Add more content here -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
 </html>
