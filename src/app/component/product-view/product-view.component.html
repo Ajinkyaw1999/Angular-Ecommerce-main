@@ -1,41 +1,32 @@
-<!--product display part-->
-
+<!-- //product-view.component.html -->
 <div class="container-fluid" style="background-color: #ecf0f1;">
   <div class="d-flex justify-content-center mt-3">
-    <app-searchbar (search)="searchProducts($event)"></app-searchbar>
+    <app-searchbar (search)="searchProducts($event)"></app-searchbar> 
   </div>
   <app-baner></app-baner>
+  
   <div class="row">
-    <div class="col-md-2 mt-3" *ngFor="let item of data?.products">
+    <div class="col-md-3 mt-3" *ngFor="let item of data?.products">
       <div class="card mt-2">
         <div class="card-body">
           <div class="card-img-actions">
-            <img
-              routerLink="/product-detail/{{ item.id }}"
-              src="{{ item.thumbnail }}"
-              class="card-img img-fluid"
-            />
+            <img routerLink="/product-detail/{{ item.id }}" src="{{ item.thumbnail }}" class="card-img img-fluid" />
           </div>
         </div>
 
         <div class="card-body bg-light text-center">
           <div>
             <h6 class="font-weight-semibold">
-              <a style="font-size: 13px" class="text-default">{{
-                item.title | slice : 0 : 18
-              }}</a>
+              <a style="font-size: 13px" class="text-default">{{ item.title | slice : 0 : 18 }}</a>
             </h6>
           </div>
           <h3 class="mb-0 font-weight-semibold">$ {{ item.price }}</h3>
-          <button
-            routerLink="/product-detail/{{ item.id }}"
-            class="btn btn-sm btn-dark mt-2"
-          >
-            <i class="fa fa-solid fa-info mr-2"></i>&nbsp;&nbsp;view details
+          <button routerLink="/product-detail/{{ item.id }}" class="btn btn-sm btn-dark mt-2">
+            <i class="fa fa-solid fa-info mr-2"></i>&nbsp;&nbsp;View Details
           </button>
           <button (click)="addtocart(item)" class="btn btn-sm btn-warning mt-2">
-            <i class="fa fa-cart-plus mr-2"></i>&nbsp;Add to cart</button
-          >&nbsp;
+            <i class="fa fa-cart-plus mr-2"></i>&nbsp;Add to Cart
+          </button>
           <button (click)="removeitem(item)" class="btn btn-sm btn-danger mt-2">
             <i class="fa fa-remove mr-2"></i>&nbsp;Remove Item
           </button>
@@ -43,4 +34,58 @@
       </div>
     </div>
   </div>
+
+  <div class="col-md-3 mt-3">
+    <div class="card mt-2">
+      <div class="card-body">
+        <form (ngSubmit)="addNewProduct(newProductForm.value)" #newProductForm="ngForm">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description" ngModel required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" name="price" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="discountPercentage">Discount Percentage</label>
+            <input type="number" class="form-control" id="discountPercentage" name="discountPercentage" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="number" class="form-control" id="rating" name="rating" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="stock">Stock</label>
+            <input type="number" class="form-control" id="stock" name="stock" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="brand">Brand</label>
+            <input type="text" class="form-control" id="brand" name="brand" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" class="form-control" id="category" name="category" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="thumbnail">Thumbnail</label>
+            <input type="text" class="form-control" id="thumbnail" name="thumbnail" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="images">Images</label>
+            <input type="text" class="form-control" id="images" name="images" ngModel required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
 </div>

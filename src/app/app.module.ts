@@ -15,6 +15,7 @@ import { CardOrderComponent } from './component/card-order/card-order.component'
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { BanerComponent } from './component/baner/baner.component';
 import { SearchbarComponent } from './component/searchbar/searchbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { SearchbarComponent } from './component/searchbar/searchbar.component';
     SidebarComponent,
     BanerComponent,
     SearchbarComponent,
+    FooterComponent,
     ],
   imports: [
     BrowserModule,

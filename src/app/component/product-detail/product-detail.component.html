@@ -1,32 +1,50 @@
-
-
-<!-- single product display-->
-<div class="container">
+<!-- single product display -->
+<div class="container mt-3">
     <div class="row product-detail">
-        <div class="col-sm-3">
-            <img class="product-img"src="{{productdata?.images[0]}}">
-     <div>
-        <button class="btn btn-primary">Buy Now</button>&nbsp;
-        <button (click)="addtocart(productdata)" *ngIf="showadd" class="btn btn-success">Add to Cart</button>&nbsp;
-        <button (click)="removeitem(productdata)" *ngIf="showremove" class="btn btn-info">Remove Item</button>
-     </div>
-     
+      <!-- Left side: Product Image and Buy Now/Add to Cart/Remove buttons -->
+      <div class="col-md-5">
+        <!-- Product Image with rounded corners and shadow -->
+        <img class="img-fluid product-img rounded shadow" src="{{productdata?.images[0]}}" alt="{{productdata?.title}}">
+  
+        <!-- Buttons with reduced spacing and styling -->
+        <div class="mt-2">
+          <button [routerLink]="['/cart-page']" class="btn btn-warning btn-sm">Buy Now</button>&nbsp;
+          <button (click)="addtocart(productdata)" *ngIf="showadd" class="btn btn-success btn-sm">Add to Cart</button>&nbsp;
+          <button (click)="removeitem(productdata)" *ngIf="showremove" class="btn btn-info btn-sm">Remove Item</button>
         </div>
-   
-
-    <!-- right side-->
-    <div class="col-sm-8">
+      </div>
+  
+      <!-- Right side: Product details -->
+      <div class="col-md-7">
         <div>
-            <h1>{{productdata?.title}}</h1>
-            <p style="color:green">Special Price</p>
-            <h3>Price:${{productdata?.price}}</h3>
-            <strong>Category:&nbsp;{{productdata?.category}}</strong><br>
-            <strong>Description:</strong><br>
-            <p>{{productdata?.description}}</p>
-        <p style="color: green;">Discount:{{productdata?.discountPercentage}} %</p><br>
-        <strong>Stocks:{{productdata?.stock}} Units left</strong><br>
-        <button routerLink="/" class="btn btn-warning text-light mt-2">BACK</button>
+          <!-- Product Title with slightly smaller font size -->
+          <h1 class="h4">{{productdata?.title}}</h1>
+  
+          <!-- Special Price with green color and smaller font size -->
+          <p style="color: green; font-size: 1rem;">Special Price</p>
+  
+          <!-- Product Price with slightly smaller font size and success color -->
+          <h3 class="text-success h5">Price: ${{productdata?.price}}</h3>
+  
+          <!-- Category and Description with reduced spacing -->
+          <strong class="text-muted">Category:</strong>
+          <p>{{productdata?.category}}</p>
+          <strong class="text-muted">Description:</strong>
+          <p>{{productdata?.description}}</p>
+  
+          <!-- Discount with green color and smaller font size -->
+          <p style="color: green; font-size: 0.8rem;">Discount: {{productdata?.discountPercentage}}%</p>
+  
+          <!-- Stock with slightly smaller font size -->
+          <strong class="h6">Stocks: {{productdata?.stock}} Units left</strong>
+            
+          <div>
+            <!-- Back button with primary color, light text, and smaller size -->
+          <button routerLink="/" class="btn btn-primary text-light mt-2 btn-sm">Back to Products</button>
+          </div>
+          
         </div>
+      </div>
     </div>
-</div>
-</div>
+  </div>
+  

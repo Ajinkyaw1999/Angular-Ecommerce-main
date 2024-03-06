@@ -1,20 +1,132 @@
+<!-- sidebar.component.html -->
+
 <!--Main Navigation-->
 <header>
     <!-- Sidebar -->
-    <nav  class="d-lg-block sidebar bg-light" style="padding-top: 56px;">
+    <nav class="d-lg-block sidebar" style="padding-top: 25px;">
         <div class="position-sticky">
             <div class="list-group list-group-flush mx-3 mt-4">
+                <h5 class="font-weight-bold mb-3  text-white p-2 text-center" style="background-color: #0a4275;">Product Categories</h5>
+
                 <li class="list-group-item py-2">
-                    <a routerLink="/" class="text-reset">Product</a>
+                    <a href="#" (click)="setCategory('smartphones')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Smartphones</span>
+                        <i class="fas fa-mobile-alt"></i>
+                    </a>
                 </li>
                 <li class="list-group-item py-2">
-                    <a href="#" class="text-reset">Services</a>
+                    <a href="#" (click)="setCategory('laptops')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Laptops</span>
+                        <i class="fas fa-laptop"></i>
+                    </a>
                 </li>
                 <li class="list-group-item py-2">
-                    <a href="#" class="text-reset">About us</a>
+                    <a href="#" (click)="setCategory('fragrances')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Fragrances</span>
+                        <i class="fas fa-perfume"></i>
+                    </a>
                 </li>
                 <li class="list-group-item py-2">
-                    <a href="#" class="text-reset">Contact</a>
+                    <a href="#" (click)="setCategory('skincare')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Skincare</span>
+                        <i class="fas fa-spa"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('groceries')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Groceries</span>
+                        <i class="fas fa-shopping-basket"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('home-decoration')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Home Decoration</span>
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('furniture')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Furniture</span>
+                        <i class="fas fa-chair"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('tops')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Tops</span>
+                        <i class="fas fa-tshirt"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('womens-dresses')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Women's Dresses</span>
+                        <i class="fas fa-female"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('womens-shoes')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Women's Shoes</span>
+                        <i class="fas fa-shoe-prints"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('mens-shirts')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Men's Shirts</span>
+                        <i class="fas fa-male"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('mens-shoes')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Men's Shoes</span>
+                        <i class="fas fa-shoe-prints"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('mens-watches')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Men's Watches</span>
+                        <i class="fas fa-clock"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('womens-watches')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Women's Watches</span>
+                        <i class="fas fa-clock"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('womens-bags')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Women's Bags</span>
+                        <i class="fas fa-shopping-bag"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('womens-jewellery')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Women's Jewellery</span>
+                        <i class="fas fa-ring"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('sunglasses')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Sunglasses</span>
+                        <i class="fas fa-sun"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('automotive')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Automotive</span>
+                        <i class="fas fa-car"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('motorcycle')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Motorcycle</span>
+                        <i class="fas fa-motorcycle"></i>
+                    </a>
+                </li>
+                <li class="list-group-item py-2">
+                    <a href="#" (click)="setCategory('lighting')" class="text-reset d-flex justify-content-between align-items-center category-item">
+                        <span>Lighting</span>
+                        <i class="fas fa-lightbulb"></i>
+                    </a>
                 </li>
             </div>
         </div>
